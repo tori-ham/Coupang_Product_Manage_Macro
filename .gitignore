@@ -1,0 +1,10 @@
+.env
+environment.txt
+hmac_test.py
+coupang-macro.spec
+
+dist
+dist/*
+
+build
+build/*
