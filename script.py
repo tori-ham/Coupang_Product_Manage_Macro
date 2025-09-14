@@ -150,7 +150,7 @@ def main_logic():
                 print_with_mute("상품명 : " + productName)
                 print_with_mute("옵션 : " + productItem['itemName'])
                 print_with_mute("현재 재고 수량 : " + str(productItem['maximumBuyCount']))
-                if productItem['maximumBuyCount'] != PRODUCT_COUNT:
+                if productItem['maximumBuyCount'] < PRODUCT_COUNT:
                     updateUrl= urls['update'] + str(productItem['vendorItemId']) + "/quantities/" + str(PRODUCT_COUNT)
                     updateSig= generateHmac("PUT", updateUrl, secretkey, accesskey)
                     updateRes= call_api(updateUrl, "PUT", updateSig)
